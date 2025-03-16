@@ -1,0 +1,21 @@
+---
+
+# Author: Jacob Benison
+# Author URI: https://github.com/ge3224
+# Date: 2025 March 16
+#
+# Ensure an Arch Linux system is up to date.
+
+- name: Assert 'ansible_become_password' is defined
+  ansible.builtin.assert:
+    that:
+      - ansible_become_password is defined 
+      - ansible_become_password != ''
+    fail_msg: "Required 'ansible_become_password' is not defined."
+  tags: always
+
+- name: Run system update
+  become: yes
+  community.general.pacman:
+    update_cache: true
+    upgrade: true
