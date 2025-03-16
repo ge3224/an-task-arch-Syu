@@ -1,6 +1,6 @@
-# A reusible Ansible task module for upgrading Arch Linux systems
+# Ansible Task: Upgrade Arch Linux System
 
-This Ansible task module ensures that Arch Linux hosts are upgraded.
+This reusable Ansible task upgrades Arch Linux.
 
 ## Requirements
 
